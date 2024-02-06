@@ -6,6 +6,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('dist'))
 
 
 let phonebook = [
@@ -30,6 +31,7 @@ let phonebook = [
     number: "39-23-6423122",
   },
 ];
+
 
 app.use((request, response, next) => {
     if (request.method === 'POST' || request.method === 'GET') {
